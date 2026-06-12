@@ -23,10 +23,13 @@ function About() {
                 as="p"
                 className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
               >
-                I am a passionate and creative Web Developer with a love for
-                beautiful and functional websites. I have experience working
-                with a variety of web technologies and frameworks and I am
-                always eager to learn new things and take on new challenges.
+                I’m a software engineer and AI developer with 1.5+ years of
+                experience building scalable web, mobile, and AI-native
+                applications. I specialize in the JavaScript/TypeScript
+                ecosystem and AI engineering—crafting custom RAG pipelines,
+                integrating LLMs, and orchestrating multi-agent systems. I’m
+                passionate about delivering end-to-end solutions that solve
+                real-world problems.
               </TextReveal>
               <div className="flex gap-2">
                 <Button asChild variant={"outline"}>
