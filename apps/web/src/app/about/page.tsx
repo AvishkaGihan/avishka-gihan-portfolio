@@ -147,7 +147,7 @@ export default function About() {
             >
               <div className="flex h-full w-full flex-wrap items-center justify-start gap-4">
                 {technologies.map((technology, index) => (
-                  <>
+                  <React.Fragment key={`tech_group_${index}`}>
                     <TechnologyCard
                       key={`technology_${index}`}
                       name={technology.name}
@@ -161,7 +161,7 @@ export default function About() {
                         containerRef={testimonialsRef}
                       />
                     )}
-                  </>
+                  </React.Fragment>
                 ))}
               </div>
             </div>
