@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import SkillCard from "@/app/about/_components/skill-card";
 import Link from "@/components/fancy/link";
 import ImageTrail from "@/components/fancy/motion-trail";
@@ -36,10 +37,10 @@ export default function About() {
                 key={index}
                 className="relative flex h-24 w-24 overflow-hidden"
               >
-                <img
+                <Image
                   src={image}
                   alt="image"
-                  loading="lazy"
+                  fill
                   className="absolute inset-0 object-cover"
                 />
               </div>
@@ -51,13 +52,13 @@ export default function About() {
             as="h1"
             className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
           >
-            Innovator
+            Creator
           </TextReveal>
           <TextReveal
             as="h1"
             className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
           >
-            Designer
+            Engineer
           </TextReveal>
           <motion.div
             className="mt-8"
@@ -82,24 +83,26 @@ export default function About() {
                 as="h3"
                 className="font-serif text-3xl leading-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl"
               >
-                I create captivating designs by blending aesthetics, motion, and
-                technology.
+                I engineer intelligent platforms by fusing scalable full-stack
+                architecture with multi-agent AI orchestration.
               </TextReveal>
               <TextReveal
                 as="p"
                 className="text-muted-foreground text-base leading-relaxed sm:text-lg md:text-lg lg:text-xl xl:text-2xl"
               >
-                My journey into creativity began with a spark of curiosity about
-                how ideas could come to life on a screen. Fascinated by the
-                interplay of design and technology, I started exploring web
-                development, motion graphics, and interface design through
-                self-driven projects. With every experiment, my skills grew, and
-                what began as a hobby soon became a passion for crafting
-                meaningful digital experiences. As I honed my abilities, I
-                sought opportunities to apply them in real-world settings,
-                turning concepts into polished outcomes. Today, my approach
-                combines creativity, problem-solving, and technical expertise to
-                create work that is both functional and impactful.
+                What began as a drive to modernize complex enterprise systems
+                has evolved into a relentless pursuit of AI-native engineering.
+                Grounded in a deep mastery of the JavaScript and mobile
+                ecosystems—spanning Next.js, React Native, and Flutter—I
+                specialize in bridging sophisticated backend infrastructure with
+                ultra-low-latency, pixel-perfect user interfaces. Today, my
+                focus lies at the absolute frontier of generative technology:
+                architecting custom RAG pipelines, deploying localized embedding
+                models, and orchestrating collaborative AI agents to solve
+                high-stakes business problems. By uniting rigorous software
+                engineering with cutting-edge artificial intelligence, I
+                transform ambitious concepts into resilient, production-ready
+                digital experiences.
               </TextReveal>
               <Button asChild variant={"outline"} className="rounded-full px-6">
                 <a href="resume.pdf" target="_blank">

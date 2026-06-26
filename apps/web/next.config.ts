@@ -8,6 +8,14 @@ createJiti(fileURLToPath(import.meta.url))("./src/env");
 // todo: setup eslint CI
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
     "@repo/api",
