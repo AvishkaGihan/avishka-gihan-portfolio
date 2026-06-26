@@ -23,13 +23,13 @@ function About() {
                 as="p"
                 className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
               >
-                I’m a software engineer and AI developer with 1.5+ years of
-                experience building scalable web, mobile, and AI-native
-                applications. I specialize in the JavaScript/TypeScript
-                ecosystem and AI engineering—crafting custom RAG pipelines,
-                integrating LLMs, and orchestrating multi-agent systems. I’m
-                passionate about delivering end-to-end solutions that solve
-                real-world problems.
+                I'm a software engineer with 1.5+ years of experience building
+                modern web, mobile, and AI-powered applications. I specialize in
+                creating scalable, high-quality software that balances
+                performance, clean architecture, and exceptional user
+                experiences. From full-stack platforms to intelligent AI
+                solutions, I enjoy transforming ideas into products that solve
+                real-world problems and create lasting impact.
               </TextReveal>
               <div className="flex gap-2">
                 <Button asChild variant={"outline"}>
