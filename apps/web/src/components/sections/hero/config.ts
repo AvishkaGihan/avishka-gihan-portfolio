@@ -5,7 +5,7 @@ const hero: Hero = {
   name: meta.author.name,
   label: meta.author.label,
   description:
-    "I design and build beautiful websites. Welcome to my portfolio.",
+    "Building thoughtful software, beautiful interfaces, and AI-driven experiences that people love to use.",
 };
 
 export { hero };
