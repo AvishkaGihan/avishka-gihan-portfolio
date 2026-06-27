@@ -81,7 +81,7 @@ export default function About() {
             <div className="space-y-8">
               <TextReveal
                 as="h3"
-                className="font-serif text-3xl leading-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl"
+                className="font-serif text-3xl leading-snug tracking-wider sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl"
               >
                 I engineer intelligent platforms by fusing scalable full-stack
                 architecture with multi-agent AI orchestration.
