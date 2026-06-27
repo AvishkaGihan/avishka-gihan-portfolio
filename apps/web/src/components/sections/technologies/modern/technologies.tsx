@@ -33,21 +33,11 @@ function Technologies() {
           >
             <div className="flex h-full w-full flex-wrap items-center justify-start gap-4">
               {technologies.map((technology, index) => (
-                <>
-                  <TechnologyCard
-                    key={`technology_${index}`}
-                    name={technology.name}
-                    containerRef={containerRef}
-                  />
-
-                  {index < technologies.length - 1 && (
-                    <TechnologyCard
-                      key={`technology_sep_${index}`}
-                      name={","}
-                      containerRef={containerRef}
-                    />
-                  )}
-                </>
+                <TechnologyCard
+                  key={`technology_${index}`}
+                  name={technology.name}
+                  containerRef={containerRef}
+                />
               ))}
             </div>
           </div>

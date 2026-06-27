@@ -12,7 +12,6 @@ import { experiences } from "@/components/sections/experience/config";
 import ExperienceCard from "@/components/sections/experience/cozy/experience-card";
 import { skills } from "@/components/sections/skills/config";
 import { technologies } from "@/components/sections/technologies/config";
-import TechnologyCard from "@/components/sections/technologies/modern/technology-card";
 import { exampleImages } from "@/lib/example-images";
 import { motion, useScroll, useTransform } from "motion/react";
 
@@ -25,7 +24,6 @@ export default function About() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroRef = useRef<HTMLDivElement>(null);
-  const testimonialsRef = useRef<HTMLDivElement>(null);
 
   return (
     <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
@@ -144,29 +142,15 @@ export default function About() {
             <h2 className="text-xl font-semibold sm:text-2xl">Technologies</h2>
           </div>
           <div className="col-span-1 md:col-span-3">
-            <div
-              className="relative h-full w-full cursor-pointer items-center justify-center overflow-hidden"
-              ref={testimonialsRef}
-            >
-              <div className="flex h-full w-full flex-wrap items-center justify-start gap-4">
-                {technologies.map((technology, index) => (
-                  <React.Fragment key={`tech_group_${index}`}>
-                    <TechnologyCard
-                      key={`technology_${index}`}
-                      name={technology.name}
-                      containerRef={testimonialsRef}
-                    />
-
-                    {index < technologies.length - 1 && (
-                      <TechnologyCard
-                        key={`technology_sep_${index}`}
-                        name={","}
-                        containerRef={testimonialsRef}
-                      />
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-2">
+              {technologies.map((technology, index) => (
+                <span
+                  key={`technology_${index}`}
+                  className="border-border text-muted-foreground rounded-full border px-3 py-1 text-sm"
+                >
+                  {technology.name}
+                </span>
+              ))}
             </div>
           </div>
         </div>
