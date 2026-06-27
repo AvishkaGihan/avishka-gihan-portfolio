@@ -8,7 +8,7 @@ import {
   Hero,
   Projects,
   Skills,
-  Testimonials,
+  // Testimonials,
 } from "@/components/sections";
 import SmoothScroll from "@/components/smooth-scroll";
 
@@ -23,7 +23,7 @@ export default function Home() {
           <Skills />
           <Projects />
           <Experience />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Contact />
         </main>
         <footer>
