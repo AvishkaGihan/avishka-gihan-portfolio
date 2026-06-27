@@ -1,0 +1,89 @@
+---
+title: VoiceMock — AI Interview Coach
+description: A voice-first mobile app that simulates real job interviews using AI — speak your answers, get intelligent follow-up questions, and receive actionable coaching feedback.
+date: 2025-07-01
+github: https://github.com/AvishkaGihan/voicemock-ai-interview
+tags:
+  - label: Flutter
+  - label: FastAPI
+  - label: Python
+  - label: Deepgram
+  - label: Groq
+  - label: Docker
+---
+
+VoiceMock is a voice-first AI interview coach that puts you inside a realistic job interview simulation. You hold a button to speak your answer, the app transcribes it, generates a contextual follow-up question using an LLM, and plays back the AI interviewer's response — all in under 3 seconds. At the end of each session, you get a detailed coaching summary covering clarity, structure, confidence, and filler-word usage.
+
+Most existing interview prep tools are either static question lists or text-only chatbots. VoiceMock is voice-native by design, giving job seekers a low-stakes environment to practice the actual experience of speaking in an interview.
+
+## Screenshots
+
+| Home / Setup | Interview Screen | Session Summary |
+|:---:|:---:|:---:|
+| ![Setup screen](/images/projects/voicemock/setup.png) | ![Interview screen](/images/projects/voicemock/interview.png) | ![Summary screen](/images/projects/voicemock/summary.png) |
+
+| Recording State | Error Recovery | Diagnostics |
+|:---:|:---:|:---:|
+| ![Recording](/images/projects/voicemock/recording.png) | ![Error](/images/projects/voicemock/error.png) | ![Diagnostics](/images/projects/voicemock/diagnostics.png) |
+
+## Features
+
+- **Push-to-talk recording** — hold to answer, release to send; no barge-in confusion
+- **Adaptive follow-up questions** — the AI reacts to *your* answer, not a fixed script
+- **Voice playback** — the AI interviewer speaks back in a natural TTS voice
+- **Transcript trust layer** — review your transcribed answer and re-record if needed
+- **End-of-session coaching summary** — grammar, clarity, confidence, structure, and filler-word analysis
+- **Latency-first design** — P50/P95 voice loop kept under 3 seconds (STT → LLM → TTS)
+- **Stage-aware error recovery** — every failure carries a stage, retryable flag, and request ID so users always know what to do next
+- **Privacy by default** — raw audio is never stored; transcripts are session-scoped and deletable
+
+## Tech Stack
+
+- **Mobile**: Flutter with `flutter_bloc` Cubit state machine and `go_router` for navigation
+- **Audio**: `record` for capture, `just_audio` for playback, `audio_session` for session management
+- **Backend**: FastAPI (Python 3.11+) with Uvicorn, deployed on Render via Docker
+- **Speech-to-Text**: Deepgram Nova-2 for fast, accurate transcription
+- **LLM**: Groq Llama 3 for sub-second contextual question generation
+- **Text-to-Speech**: Deepgram Aura for natural-sounding AI voice responses
+- **Validation**: Pydantic v2 for strict request/response contracts
+- **Security**: `itsdangerous` signed session tokens, `slowapi` rate limiting
+- **CI/CD**: GitHub Actions with separate pipelines for mobile and API
+
+## How It Works
+
+The core of VoiceMock is a voice agent loop running on a strict state machine:
+
+1. **Record** — User holds the talk button; audio is captured locally
+2. **Upload** — Audio is sent to the FastAPI backend via multipart POST
+3. **Transcribe** — Deepgram Nova-2 converts speech to text
+4. **Generate** — Groq Llama 3 produces a contextual follow-up question based on the answer
+5. **Synthesize** — Deepgram Aura converts the question text to audio
+6. **Playback** — The mobile app fetches and plays the audio response
+7. **Repeat** — After 5 turns, the session ends with a full coaching summary
+
+The two-step TTS fetch (POST returns JSON, then GET fetches audio) lets the client display the transcript and question text immediately — improving perceived responsiveness without waiting for the audio to be ready.
+
+## Architecture Highlights
+
+The mobile app uses a feature-first Flutter structure with `flutter_bloc` as the single source of truth for interview flow. The state machine enforces strict transitions — `Ready → Recording → Uploading → Transcribing → Thinking → Speaking` — with hard guards preventing concurrent recording and playback.
+
+The backend follows a **Provider Adapter pattern**: a central orchestrator pipeline wires together the STT, LLM, and TTS providers, each swappable independently. All API responses use a consistent JSON envelope `{ data, error, request_id }` for predictable client handling.
+
+Sessions are held in-memory with TTL expiry — no database needed for the MVP. A Redis swap is a single-layer change when scaling is required.
+
+## Challenges & Solutions
+
+**Sub-3-second latency** was non-negotiable for a voice app to feel natural. Achieving this required choosing providers specifically for raw speed (Groq's inference hardware, Deepgram's streaming transcription), fine-tuning timeout budgets per pipeline stage, and the two-step TTS design so the client isn't blocked waiting for audio before showing text.
+
+**Audio state machine correctness** was harder than expected. Double-speak (overlapping TTS playback) and UI freezes during state transitions were fixed by making the Cubit the single source of truth — no concurrent audio states possible, and no boolean flags living outside the machine.
+
+**Stage-aware error recovery** made a huge UX difference. Instead of a generic "something went wrong", each pipeline stage produces a typed error with a `retryable` flag and `request_id`, so the UI can offer the right action: retry, re-record, or cancel — never a dead end.
+
+## Future Plans
+
+- Voice Activity Detection (VAD) to remove push-to-talk friction
+- Streaming responses for lower perceived latency
+- Role-specific question packs (React, Flutter, Product, etc.)
+- Resume upload to tailor questions to real experience
+- Session history and improvement tracking with charts
+- Multi-language support and pronunciation feedback
