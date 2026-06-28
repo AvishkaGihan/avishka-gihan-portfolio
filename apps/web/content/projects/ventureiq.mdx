@@ -1,0 +1,50 @@
+---
+title: VentureIQ — AI Startup Validation
+description: AI-powered startup idea validation platform that provides instant, comprehensive feasibility analysis through a panel of specialized AI agents.
+date: 2025-08-01
+github: https://github.com/AvishkaGihan/ventureiq
+tags:
+  - label: Flutter
+  - label: FastAPI
+  - label: LangGraph
+  - label: Python
+  - label: PostgreSQL
+  - label: AI/ML
+---
+
+VentureIQ is an AI-powered startup idea validation platform designed to give founders instant, comprehensive feasibility analysis. By leveraging a panel of specialized AI agents built with LangGraph, it assesses ideas from multiple perspectives—market size, technical feasibility, competitive landscape, and financial viability.
+
+## Features
+
+- **Multi-Agent Orchestration** — Uses LangGraph to coordinate a team of specialized AI agents that debate and analyze startup ideas.
+- **Instant Feasibility Reports** — Generates comprehensive validation reports covering technical, market, and business model risks.
+- **Cross-Platform Mobile App** — A beautiful, intuitive Flutter app that lets founders capture ideas on the go.
+- **Robust AI Backend** — Powered by FastAPI, Google Gemini, and OpenRouter for high-performance LLM routing.
+- **Vector Search** — Integrates ChromaDB for semantic search and Retrieval-Augmented Generation (RAG).
+- **Scalable Infrastructure** — Fully containerized with Docker, backed by PostgreSQL and Redis for caching and rate-limiting.
+
+## Tech Stack
+
+- **Mobile**: Flutter (Dart) with Riverpod for state management and GoRouter for navigation
+- **Backend**: FastAPI (Python 3.13) with async support
+- **AI/ML**: LangGraph, Google Gemini, OpenRouter LLMs, ChromaDB
+- **Database & Caching**: PostgreSQL 17, Redis 7
+- **Auth**: Firebase Authentication with JWT token exchange
+- **DevOps**: Docker, Docker Compose, Alembic (migrations), uv (Python package manager)
+
+## Architecture Highlights
+
+VentureIQ separates concerns across a clean monorepo architecture:
+
+**The Mobile App**  
+Built with Flutter, the client follows a feature-first architecture. It uses Riverpod for predictable state management and Dio for robust networking, ensuring a smooth experience even when agent processing takes longer.
+
+**The AI Backend**  
+The core of the platform is a FastAPI service that orchestrates complex LLM workflows. It uses **LangGraph** to model the validation process as a state machine where different AI "personas" (e.g., Technical Lead, Market Analyst, Financial Advisor) interact. The backend relies on **ChromaDB** for vector storage to retrieve relevant market data, and **Redis** for rate limiting and fast response caching.
+
+**Infrastructure**  
+The entire stack is containerized for local development and production deployment, using Docker Compose to spin up the API, PostgreSQL, Redis, and ChromaDB seamlessly.
+
+## Development Workflow
+
+The project utilizes modern Python tooling, specifically `uv` for lightning-fast dependency management and `ruff` for linting and formatting. The database schema is managed through SQLAlchemy models and Alembic migrations, ensuring data integrity as the application evolves.

@@ -1,0 +1,55 @@
+---
+title: Mentor — School Management System
+description: A comprehensive web application for managing educational institutions efficiently, featuring interactive dashboards, academic management, and role-based access.
+date: 2025-09-01
+github: https://github.com/AvishkaGihan/mentor-app
+tags:
+  - label: Next.js
+  - label: TypeScript
+  - label: PostgreSQL
+  - label: Prisma
+  - label: Tailwind CSS
+  - label: Docker
+---
+
+Mentor is a powerful, comprehensive school management system designed to streamline administrative tasks, enhance communication, and provide insightful analytics for educational institutions. It brings teachers, students, parents, and administrators together onto a single, unified platform.
+
+## Dashboard
+
+![Mentor Dashboard](/images/projects/mentor/dashboard.png)
+
+## Features
+
+- **Robust Role-Based Access** — Multi-role support (Admin, Teacher, Student, Parent) secured with Clerk authentication.
+- **Interactive Dashboards** — Real-time performance charts and personalized analytics tailored to each user's role.
+- **Academic Management** — Comprehensive tools for class organization, subject management, and lesson planning.
+- **Assignments & Exams** — Create, distribute, and grade assignments, alongside full exam scheduling and result tracking.
+- **Event & Calendar Integration** — School-wide and personalized event tracking using React Big Calendar.
+- **Attendance & Analytics** — Precise student attendance monitoring combined with deep performance analytics.
+- **Seamless Communication** — Centralized announcement systems and cross-role communication channels.
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React, Tailwind CSS, Recharts
+- **Language**: TypeScript
+- **Backend & Database**: PostgreSQL managed via Prisma ORM
+- **Authentication**: Clerk
+- **Forms & Validation**: React Hook Form
+- **Storage & Infrastructure**: Cloudinary for file storage, Docker for containerization
+
+## Architecture Highlights
+
+Mentor is built on a modern, full-stack Next.js architecture leveraging React Server Components for maximum performance and SEO. 
+
+**Data Management**  
+The application uses PostgreSQL with Prisma ORM for type-safe database queries. The database schema is carefully designed to handle complex relationships between students, teachers, classes, and academic records, all while maintaining high query performance for dashboard analytics.
+
+**Authentication & Security**  
+Security is paramount in an educational application. Mentor utilizes Clerk to handle complex authentication flows and multi-role authorization, ensuring that students only see their own data, while teachers and admins have appropriate broader access.
+
+**Deployment & Scalability**  
+The entire application is fully containerized using Docker, allowing for predictable deployments across any environment. 
+
+## Development Workflow
+
+The project is built with developer experience in mind. It includes a comprehensive seeding script (`prisma db seed`) to instantly populate the database with realistic mock data, allowing developers to immediately start working with a fully fleshed-out dashboard environment.
