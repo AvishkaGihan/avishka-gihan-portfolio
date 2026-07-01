@@ -1,0 +1,67 @@
+---
+title: FitForge — AI-Powered Fitness App
+description: A cutting-edge, AI-powered fitness application that provides personalized workout plans and real-time coaching through Google Gemini, built with React Native and Expo.
+date: 2025-10-01
+github: https://github.com/AvishkaGihan/fitforge
+tags:
+  - label: React Native
+  - label: Expo
+  - label: TypeScript
+  - label: Node.js
+  - label: Supabase
+  - label: Google Gemini
+  - label: AI/ML
+---
+
+FitForge is a cutting-edge, AI-powered fitness application that provides personalized workout plans and real-time coaching through conversational AI. Built with React Native and Expo, it showcases modern mobile development practices with a premium dark-themed UI and smooth 60fps animations.
+
+## Screenshots
+
+| Login Screen | Dashboard Screen | Workout Tracking | AI Fitness Coach |
+|:---:|:---:|:---:|:---:|
+| ![Login](/images/projects/fitforge/login.png) | ![Dashboard](/images/projects/fitforge/dashboard.png) | ![Workout](/images/projects/fitforge/workout.png) | ![AI Chat](/images/projects/fitforge/chat.png) |
+
+## Features
+
+- 🤖 **AI Workout Generation** - Personalized workouts powered by Google Gemini tailored to user goals and fitness level.
+- 💬 **AI Fitness Coach** - Real-time conversational chat assistance powered by LangChain.
+- 📊 **Progress Tracking** - Comprehensive statistics, visualization, and workout history logging.
+- ⏱️ **Live Workout Tracking** - Interactive timers, set/rep counting, and real-time guidance during exercise.
+- 🔐 **Biometric Authentication** - Built-in secure access with Face ID & Touch ID support.
+- 📚 **Exercise Library** - Comprehensive library of 50+ exercises with detailed instructions.
+- 🎨 **Premium UI/UX** - Custom dark theme with smooth gradient accents and 60fps animations via React Native Reanimated.
+- 📴 **Offline Support** - Local caching of workouts for seamless gym use without active internet connectivity.
+
+## Tech Stack
+
+- **Mobile (Frontend)**: React Native 0.81, Expo SDK 54, TypeScript, React Navigation 7, React Native Reanimated 4, React Native Paper, Axios, Zod
+- **Backend (API)**: Node.js 22 LTS, Express 5, TypeScript, LangChain, Google Gemini API
+- **Database & Services**: Supabase (Database & Authentication), PostgreSQL, Pinecone (Vector Search - optional)
+
+## Architecture Highlights
+
+FitForge is organized as a clean monorepo, keeping the codebase unified and organized:
+
+```
+FitForge/
+├── mobile/          # React Native app (Expo)
+├── backend/         # Express API server
+├── packages/        # Shared utilities
+└── docs/           # Documentation
+```
+
+### Key Design Patterns
+
+- **Component-Based UI** - Reusable React Native components driven by a strict styling system.
+- **Repository Pattern** - Abstracted data access layers on the backend for clean separation from the Postgres database.
+- **API Gateway Pattern** - Centralized routing and middleware architecture in the Express backend.
+- **Context API & Custom Hooks** - Efficient frontend state management and reusable business logic modules.
+
+## How It Works
+
+The platform uses AI orchestration to dynamically tailor the user's fitness journey:
+
+1. **Onboarding**: The user inputs their physical stats, target goals, and available equipment.
+2. **AI Generation**: The Google Gemini API processes this input to build a structured workout schedule.
+3. **Execution**: The mobile app tracks live workouts with interactive timers and progress counters, operating completely offline if necessary.
+4. **Coaching**: The user can chat with the real-time AI fitness coach to modify exercises or seek advice on form and nutrition.
