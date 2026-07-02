@@ -1,0 +1,50 @@
+---
+title: Face Recognition Brain
+description: A full-stack React web application that detects faces in images using Clarifai's machine learning model, backed by an Express API and PostgreSQL database.
+date: 2023-12-04
+github: https://github.com/AvishkaGihan/face-recognition-brain
+tags:
+  - label: React
+  - label: Node.js
+  - label: Express
+  - label: PostgreSQL
+  - label: Clarifai API
+  - label: bcrypt & JWT
+---
+
+Face Recognition Brain is a full-stack web application that allows users to detect faces in any uploaded image or image URL. The application draws bounding boxes around detected faces using Clarifai's machine learning API, tracks user entry counts, and manages accounts with secure authentication.
+
+### 🔗 Code Repositories
+- **Frontend Client:** [github.com/AvishkaGihan/face-recognition-brain](https://github.com/AvishkaGihan/face-recognition-brain)
+- **Backend API:** [github.com/AvishkaGihan/face-recognition-brain-api](https://github.com/AvishkaGihan/face-recognition-brain-api)
+
+## Features
+
+- **Face Detection** — Processes image URLs or uploads to identify and box faces using the Clarifai machine learning API.
+- **User Authentication** — Secure user sign-in and registration with hashed password storage (bcrypt) and session management.
+- **Entry Counter** — Tracks and displays how many images each logged-in user has submitted for scanning.
+- **Responsive Web Interface** — Clean frontend design rendering smoothly on mobile and desktop screens.
+- **Robust REST API** — Independent Express.js backend handling user verification, image counters, and machine learning requests.
+
+## Tech Stack
+
+### Frontend
+- **Framework**: React
+- **Styling**: Tachyons (Functional CSS)
+- **API Integration**: Clarifai Model API
+
+### Backend & Database
+- **Runtime**: Node.js & Express
+- **Query Builder**: Knex.js
+- **Database**: PostgreSQL
+- **Security**: bcrypt (password hashing), JWT (authentication tokens)
+
+## Architecture Highlights
+
+Face Recognition Brain is split into two distinct codebases (Frontend and API), communicating securely via REST.
+
+**Clarifai Machine Learning Integration**  
+When a user submits an image URL, the React frontend securely requests coordinates from the Express API, which acts as a gateway to the Clarifai Machine Learning models. The API handles Clarifai authorization securely server-side, processes the image data, calculates bounding box percentages, and sends them back to React to draw overlays on the UI.
+
+**Database & User Tracking**  
+A PostgreSQL database stores credentials and entries. When a successful detection occurs, the backend increments the user's scan count transactionally using Knex.js, updating the user profile in real-time.
