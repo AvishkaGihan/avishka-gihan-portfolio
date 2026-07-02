@@ -1,0 +1,63 @@
+---
+title: DocuMind AI — Chat with Documents
+description: A secure, high-performance RAG (Retrieval-Augmented Generation) platform for uploading PDFs and holding contextual conversations, built with Flutter and FastAPI.
+date: 2026-03-22
+github: https://github.com/AvishkaGihan/documind-ai
+tags:
+  - label: Flutter
+  - label: FastAPI
+  - label: LangChain
+  - label: ChromaDB
+  - label: Groq API
+  - label: PWA / Mobile
+---
+
+DocuMind AI is a secure, high-performance RAG (Retrieval-Augmented Generation) platform that allows users to upload PDFs and engage in contextual chat conversations. Designed with privacy first, it guarantees strict user data isolation for enterprise-grade safety, processing documents with blazing-fast LLaMA 3.3 inference.
+
+## Screenshots
+
+| Splash Screen | Login & Auth | Home & Library |
+| :---: | :---: | :---: |
+| ![Splash Screen](/images/projects/documind-ai/splash_screen.png) | ![Login Screen](/images/projects/documind-ai/login_screen.png) | ![Library](/images/projects/documind-ai/library_screen.png) |
+
+| Chat Interface | Document Citations | Settings |
+| :---: | :---: | :---: |
+| ![Chat](/images/projects/documind-ai/chat_screen.png) | ![Citations](/images/projects/documind-ai/citation_view.png) | ![Settings Screen](/images/projects/documind-ai/settings_screen.png) |
+
+## Features
+
+- 🔒 **Secure Data Isolation** — ChromaDB collections are partitioned per user/document pair, ensuring zero cross-user data leaks.
+- ⚡ **Lightning-Fast Inference** — Powered by LLaMA 3.3 70B on the Groq API for sub-second responses.
+- 📈 **Zero-Cost Embedded Search** — Local `Sentence-Transformers` generate vector embeddings offline, removing external embedding API costs.
+- 🔗 **Citation Tracing** — Every AI response includes clickable source page references for complete auditability.
+- 📱 **Cross-Platform Mobile App** — A beautiful, responsive Material 3 experience built with Flutter and Riverpod.
+
+## Tech Stack
+
+### Frontend (Mobile)
+- **Framework**: Flutter 3.41 / Dart 3.x
+- **State Management**: Riverpod (`AsyncNotifier`) / Immutable State (`@freezed`)
+- **Networking**: Dio with secure request/response interceptors
+- **Storage**: `flutter_secure_storage` for session caching
+
+### Backend (API)
+- **Framework**: Python / FastAPI
+- **ORM & Migrations**: SQLAlchemy 2.0 (asyncpg) with Alembic
+- **Validation**: Pydantic v2
+- **Database**: SQLite (Development) / PostgreSQL 16 (Production)
+
+### AI / ML Infrastructure
+- **Orchestration**: LangChain for managing structured RAG pipelines
+- **Embeddings**: `sentence-transformers` running locally
+- **Vector Store**: ChromaDB with segregated tenant collections
+- **LLM Engine**: Groq API (LLaMA 3.3 70B)
+
+## Architecture Highlights
+
+DocuMind AI is engineered to protect user privacy while maintaining consumer-level latency.
+
+**Document Vector Isolation**  
+Instead of pushing all documents into a shared index, the FastAPI server dynamically spins up or mounts isolated ChromaDB collections named after unique `user_id` and `document_id` combinations. When a user deletes a file, the entire collection database directory is deleted, satisfying strict GDPR/data sovereignty standards.
+
+**Hybrid Local-Cloud RAG Pipeline**  
+To optimize operation costs, vector embedding generation happens entirely on-premise/on-server using lightweight local Sentence-Transformers. Only the clean document chunks and the prompt context are transmitted to the Groq API, leveraging ultra-high-speed LLaMA 3.3 hardware to stream answers back via Server-Sent Events (SSE).
