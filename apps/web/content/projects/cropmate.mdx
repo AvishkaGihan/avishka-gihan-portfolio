@@ -1,0 +1,55 @@
+---
+title: CropMate — Agricultural E-Commerce
+description: A comprehensive agricultural e-commerce platform that connects farmers directly with buyers, supported by optimized delivery tracking and offline PWA functionality.
+date: 2025-05-26
+github: https://github.com/AvishkaGihan/cropmate-platform
+tags:
+  - label: Next.js
+  - label: TypeScript
+  - label: Tailwind CSS
+  - label: Prisma
+  - label: MongoDB
+  - label: NextAuth
+  - label: PWA
+---
+
+CropMate is a comprehensive agricultural e-commerce platform designed to connect farmers directly with buyers and independent delivery drivers. The platform aims to revolutionize the agricultural supply chain by eliminating unnecessary intermediaries, increasing farmer incomes, reducing vendor sourcing costs, and minimizing food waste.
+
+## Marketplace Interface
+
+![CropMate Marketplace](/images/projects/cropmate/home.png)
+
+## Features
+
+### For Farmers
+- **Crop Management** — Create, update, and manage fresh produce listings with images and detailed pricing.
+- **Inventory & Revenue Dashboard** — Real-time tracking of crop availability, sales history, and incoming earnings.
+- **Order Tracking** — Monitor orders through the entire journey from payment clearance to delivery completion.
+
+### For Customers
+- **Marketplace Browsing** — Discover fresh, locally sourced produce from nearby farms.
+- **Order & Payments** — Seamless cart management, order placement, and secure payment processing with proof upload.
+- **Delivery Tracking** — Live updates from dispatch to doorstep.
+
+### For Drivers & Admins
+- **Delivery Logistics** — Assignment acceptance, route optimization, and earnings tracker for drivers.
+- **Platform Oversight** — Admin dashboards to manage users, moderate listings, track orders, and resolve disputes.
+
+## Tech Stack
+
+- **Frontend**: Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui
+- **Backend & Logic**: Next.js API Routes, Server Actions
+- **Database & ORM**: Prisma ORM with MongoDB
+- **Authentication**: NextAuth.js for secure user sessions
+- **File Storage**: Cloudinary for product image hosting
+- **Mobile Experience**: Progressive Web App (PWA) with offline capabilities
+
+## Architecture Highlights
+
+CropMate utilizes a single Next.js codebase to serve four distinct user roles, implementing role-based routing and middleware access controls.
+
+**PWA & Offline Capability**  
+Recognizing that farmers and drivers often operate in areas with poor cellular connectivity, CropMate is configured as a Progressive Web App. It features offline caching for critical marketplace, inventory, and route data, ensuring essential tasks can be performed in the field and synchronized once a network connection is re-established.
+
+**Database & Modeling**  
+MongoDB acts as the primary data store, providing the flexible document schema required for varying crop attributes. Prisma ORM handles type-safe schema mapping, allowing clean relational joins (such as binding a specific order to a Customer, Farmer, and Driver) within a non-relational database.
