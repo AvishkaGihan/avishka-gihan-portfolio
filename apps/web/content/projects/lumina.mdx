@@ -1,0 +1,45 @@
+---
+title: Lumina — AI Prompt Sharing
+description: A platform for sharing and exploring AI prompts, encouraging creativity and collaboration among creators, built with Next.js and MongoDB.
+date: 2024-10-27
+github: https://github.com/AvishkaGihan/lumina-prompt-platform
+tags:
+  - label: Next.js
+  - label: NextAuth.js
+  - label: MongoDB
+  - label: Tailwind CSS
+---
+
+Lumina is a platform designed for sharing and exploring AI prompts, encouraging creativity and collaboration among creators. It allows users to discover the power of AI-generated content, share their best prompts, and unlock their creative potential in a community-driven space.
+
+## Screenshots
+
+| Home Page | Profile Page | Create Post Page |
+|:---:|:---:|:---:|
+| ![Home Page](/images/projects/lumina/home.png) | ![Profile Page](/images/projects/lumina/profile.png) | ![Create Post](/images/projects/lumina/create-post.png) |
+
+## Features
+
+- **Share & Discover Prompts** — Post your most effective AI prompts and search through a rich repository of prompts shared by other creators.
+- **Collaborative Community** — Connect and collaborate with other prompt engineers and digital creators.
+- **User Profiles** — Manage your created prompts, edit postings, and view user-specific insights.
+- **Seamless Authentication** — Secure NextAuth.js integration featuring third-party Google sign-in.
+- **Modern Responsive Design** — Styled beautifully with Tailwind CSS for high performance across all mobile and desktop layouts.
+
+## Tech Stack
+
+- **Framework**: Next.js
+- **Authentication**: NextAuth.js (with Google provider)
+- **Database & Modeling**: MongoDB & Mongoose
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+
+## Architecture Highlights
+
+Lumina utilizes Next.js with App Router for building a performant, SEO-friendly prompt directory.
+
+**Dynamic Feeds**  
+Prompts are stored as structured documents in MongoDB. The search flow is designed to fetch, filter, and render prompts instantly based on prompt body content, creators, or categorized hashtag labels.
+
+**Session Management**  
+Using NextAuth.js, Lumina provides seamless authentication. User details and credentials are securely serialized, while user profiles directly connect to database relations containing all prompts created by that specific account.
