@@ -39,7 +39,7 @@ function About() {
               alt="Image"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
               height="310"
-              src="/images/hero.jpg"
+              src="/images/hero.png"
               sizes="100vw"
               width="550"
             />
