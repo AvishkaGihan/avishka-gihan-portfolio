@@ -1,0 +1,55 @@
+---
+title: eMart eCommerce Platform
+description: A comprehensive full-stack e-commerce marketplace featuring product reviews, cart management, stripe-like payments, and an admin dashboard, built with the MERN stack.
+date: 2024-03-29
+github: https://github.com/AvishkaGihan/eMart
+tags:
+  - label: MongoDB
+  - label: Express
+  - label: React
+  - label: Node.js
+  - label: Redux
+---
+
+eMart is a comprehensive eCommerce marketplace platform built on the MERN stack. It features shopping carts, user review ratings, trending product carousels, and a dedicated admin interface for managing inventory, orders, and users.
+
+## App Screenshots
+
+### Customer Shopping Flow
+
+| Home Screen | Product Page | Customer Profile |
+| :---: | :---: | :---: |
+| ![Home Screen](/images/projects/emart/home.png) | ![Product Page](/images/projects/emart/product-details.png) | ![Customer Profile](/images/projects/emart/profile.png) |
+
+| Login Page | Register Page | Order Details |
+| :---: | :---: | :---: |
+| ![Login Page](/images/projects/emart/login.png) | ![Register Page](/images/projects/emart/register.png) | ![Order Details](/images/projects/emart/order-details.png) |
+
+### Admin Control Panel
+
+| Product Inventory Management | Order Fulfillment Tracking | User Account Administration |
+| :---: | :---: | :---: |
+| ![Product List](/images/projects/emart/admin-product-list.png) | ![Order List](/images/projects/emart/admin-order-list.png) | ![User List](/images/projects/emart/admin-user-list.png) |
+
+| Edit Product | Edit User Details |
+| :---: | :---: |
+| ![Edit Product](/images/projects/emart/edit-product.png) | ![Edit User](/images/projects/emart/admin-user-edit.png) |
+
+## Features
+
+- 🛒 **Full-Featured Shopping Cart** — Seamlessly add, remove, and manage cart product quantities.
+- 💬 **Product Reviews & Ratings** — Real-time user feedback logging and star rating systems.
+- 🎠 **Trending Product Carousel** — Discover popular products at a glance on the homepage.
+- 🔍 **Search & Pagination** — Find items instantly and browse catalog results with ease.
+- 📊 **Admin Dashboard** — Complete CRUD operations for products, order processing management, and user permissions.
+
+## Tech Stack
+
+- **Frontend**: React, Redux Toolkit (state management), Bootstrap
+- **Backend & Logic**: Node.js, Express
+- **Database**: MongoDB with Mongoose ORM
+- **Security**: bcrypt (password hashing), JSON Web Tokens (JWT)
+
+## Architecture Highlights
+
+eMart decouples client-side presentation from backend business logic. Using Redux Toolkit, client state is updated transactionally. The backend API handles Clarifai operations securely, manages MongoDB transactions, and enforces authentication gates on sensitive admin routes.

@@ -1,0 +1,72 @@
+---
+title: Insight — MERN Blogging Platform
+description: A full-stack blogging web application featuring CRUD posts, user comments, likes, and admin dashboards, built with the MERN stack and Firebase Auth.
+date: 2024-05-28
+github: https://github.com/AvishkaGihan/insight-blog
+tags:
+  - label: MongoDB
+  - label: Express
+  - label: React
+  - label: Node.js
+  - label: Firebase Auth
+---
+
+Insight is a full-featured blogging platform built on the MERN stack. It allows users to write posts, comment, like/dislike feedback, and sign in securely via Firebase Auth.
+
+## App Screenshots
+
+### Public Web Pages
+
+| Home Screen | About Page | Projects Page |
+| :---: | :---: | :---: |
+| ![Home Screen](/images/projects/insight-blog/home.png) | ![About Page](/images/projects/insight-blog/about.png) | ![Projects Page](/images/projects/insight-blog/projects.png) |
+
+| Article View | Search & Filter |
+| :---: | :---: |
+| ![Article Post](/images/projects/insight-blog/post.png) | ![Search Page](/images/projects/insight-blog/search.png) |
+
+### Authentication
+
+| Sign In | Sign Up |
+| :---: | :---: |
+| ![Sign In](/images/projects/insight-blog/sign-in.png) | ![Sign Up](/images/projects/insight-blog/sign-up.png) |
+
+### Blogging CRUD
+
+| Create Post | Update Post |
+| :---: | :---: |
+| ![Create Post](/images/projects/insight-blog/create-post.png) | ![Update Post](/images/projects/insight-blog/update-post.png) |
+
+### Admin Dashboard
+
+| Main Analytics | Edit Profile | Manage Posts |
+| :---: | :---: | :---: |
+| ![Dashboard Analytics](/images/projects/insight-blog/dashboard-main.png) | ![Profile Edit](/images/projects/insight-blog/dashboard-profile.png) | ![Post Management](/images/projects/insight-blog/dashboard-posts.png) |
+
+| Manage Comments | Manage Users |
+| :---: | :---: |
+| ![Comment Management](/images/projects/insight-blog/dashboard-comments.png) | ![User Management](/images/projects/insight-blog/dashboard-users.png) |
+
+## Features
+
+- 📝 **Full Blog CRUD** — Create, edit, publish, and delete blog posts using rich text layouts.
+- 💬 **Comment Threading** — Leave feedback on posts and vote on comment ratings.
+- 🔐 **Firebase Auth** — Secure third-party Google and email credentials sign-in/registration.
+- 📊 **Admin Oversight Panel** — Administrative interface to audit posts, comments, and user accounts.
+
+## Tech Stack
+
+### Frontend
+- **Framework**: React.js, React Router
+- **State**: Redux Toolkit
+- **Styling**: Tailwind CSS & Flowbite React
+- **Auth Service**: Firebase Client SDK
+
+### Backend & DB
+- **Runtime**: Node.js & Express.js
+- **Database**: MongoDB with Mongoose
+- **Tokens**: JWT for session auth
+
+## Architecture Highlights
+
+Insight combines Firebase Authentication for client sessions with JWT tokens for API route authorization. The backend validates requests via middleware, verifying both user IDs and admin roles before authorizing modifications on MongoDB documents.
