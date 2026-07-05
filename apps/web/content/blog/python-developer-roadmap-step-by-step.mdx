@@ -1,0 +1,126 @@
+---
+title: "How I Would Learn Python from Scratch: A 6-Step Modern Roadmap"
+description: "Avoid the traps of tutorial hell and generalization. A 10-year Python veteran shares the optimal 6-step roadmap to go from absolute beginner to production-ready developer."
+date: 2026-07-05
+author: Avishka Gihan
+---
+
+# How I Would Learn Python from Scratch: A 6-Step Modern Roadmap
+
+Python is currently the most popular, versatile, and in-demand programming language in tech. Whether you want to build web applications, analyze datasets, automate workflows, or dive into artificial intelligence, Python is the gateway.
+
+However, many self-taught developers fall into a common trap: **going too wide, too early**. They jump from writing a basic script, to building a game in Pygame, to trying to train a machine learning model, without ever mastering the depth of any single area. The result? They spend months learning but can't confidently build a single project from scratch.
+
+If a 10-year veteran programmer had to start learning Python from scratch today, this is the exact, streamlined 6-step roadmap they would follow to go from zero to hireable, fast.
+
+---
+
+## Step 1: The Core Fundamentals (Month 1)
+
+Before touching any framework, library, or API, you must become fluent in the building blocks of the language. Spend your first 2 to 4 weeks coding daily, focusing on:
+
+- **Variables & Types:** Strings, integers, floats, booleans.
+- **Control Flow:** `if/else` statements, `for` loops, `while` loops.
+- **Functions:** Defining them, parameters vs. arguments, return values.
+- **Data Structures:** Lists, Dictionaries, Tuples, and Sets. Learn when to use each.
+- **List Comprehensions:** A Python-specific feature that allows you to construct lists in a clean, single line of code.
+- **File Input/Output:** Reading from and writing to local files.
+- **Error Handling:** Using `try/except/finally` blocks to make your code resilient.
+
+**The Goal:** Write a 100-to-200 line program from scratch (like a text-based "Choose Your Own Adventure" game or a task tracker) without looking up basic syntax every 30 seconds.
+
+---
+
+## Step 2: Object-Oriented Programming (OOP) (Month 2)
+
+Many self-taught developers hit a ceiling because they skip OOP. Understanding OOP is key to understanding how Python works under the hood and how production codebases are structured.
+
+- **Core Concepts:** Classes, instances, object initialization (`__init__`), attributes, methods, and inheritance.
+- **Dunder Methods (Double Underscore):** Special methods like `__str__`, `__repr__`, and `__len__`. These define how objects interact with built-in operations (like printing, adding, or getting lengths).
+- **Mindset Shift:** Learn when to use a class (to bundle state and behavior) versus when a simple function is sufficient.
+
+---
+
+## Step 3: Environments & Dependencies (Month 2)
+
+Once you begin writing larger applications that rely on external packages, you need to know how to structure your files and manage dependencies.
+
+- **Code Organization:** Organizing code across multiple modules and packages, and understanding the `if __name__ == "__main__":` entry guard.
+- **Package Managers:** Using `pip` and modern, ultra-fast tools like `uv` to install third-party packages.
+- **Virtual Environments:** Isolating project dependencies so that package updates in one project do not break another.
+- **Standard Library:** Familiarizing yourself with built-in modules like `random`, `os`, and `json`.
+
+---
+
+## Step 4: Specialization—Depth Over Breadth (Months 3–5)
+
+This is the most critical stage. Once you understand the fundamentals and code organization, **pick one direction and commit to it for at least 3 to 6 months**. Do not jump around.
+
+Here are the main tracks to choose from:
+
+<div className="my-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+  <div className="bg-muted/20 text-card-foreground flex flex-col rounded-xl border p-6 shadow-sm">
+    <div className="text-primary mb-2 text-lg font-bold">Web & Backend</div>
+    <div className="text-muted-foreground mb-4 text-sm">
+      Building APIs, web apps, and server systems.
+    </div>
+    <ul className="text-muted-foreground list-inside list-disc space-y-1 text-xs">
+      <li>{"FastAPI"}</li>
+      <li>{"Django"}</li>
+      <li>{"Flask"}</li>
+      <li>{"Target: Build 3 complete web apps"}</li>
+    </ul>
+  </div>
+  <div className="bg-muted/20 text-card-foreground flex flex-col rounded-xl border p-6 shadow-sm">
+    <div className="text-primary mb-2 text-lg font-bold">Data Science & AI</div>
+    <div className="text-muted-foreground mb-4 text-sm">
+      Analyzing data, training models, and deploying AI solutions.
+    </div>
+    <ul className="text-muted-foreground list-inside list-disc space-y-1 text-xs">
+      <li>{"Pandas & NumPy"}</li>
+      <li>{"Scikit-Learn"}</li>
+      <li>{"PyTorch"}</li>
+      <li>{"Target: Perform 5 end-to-end analyses"}</li>
+    </ul>
+  </div>
+  <div className="bg-muted/20 text-card-foreground flex flex-col rounded-xl border p-6 shadow-sm">
+    <div className="text-primary mb-2 text-lg font-bold">
+      Automation & Scripting
+    </div>
+    <div className="text-muted-foreground mb-4 text-sm">
+      Writing scripts to automate tasks and scrape the web.
+    </div>
+    <ul className="text-muted-foreground list-inside list-disc space-y-1 text-xs">
+      <li>{"BeautifulSoup & Scrapy"}</li>
+      <li>{"Requests & HTTP"}</li>
+      <li>{"OS & File automation"}</li>
+      <li>{"Target: Automate 3 real-world tasks"}</li>
+    </ul>
+  </div>
+</div>
+
+---
+
+## Step 5: Portfolio Projects (Months 5+)
+
+The fastest way to learn is by building projects that are **slightly above** your current skill level.
+
+- **Avoid Tutorial Hell:** If you follow a tutorial to learn a concept, immediately build a similar project on your own without looking at the instructions.
+- **Finish What You Start:** A single completed project deployed online teaches you more about the real software lifecycle than five half-finished scripts.
+- **Showcase on GitHub:** Put all of your work on GitHub. Learn how to write a clean `README.md` to document how to install and run your code.
+
+---
+
+## Step 6: Professional Developer Skills
+
+These are the "unglamorous" skills that separate casual programmers from professional software developers:
+
+1.  **Reading Code:** Go to GitHub and read open-source Python code or inspect the standard libraries you use. Seeing how senior devs structure their files and write clean code is incredibly educational.
+2.  **Using a Debugger:** Stop relying solely on `print()` statements. Learn how to set breakpoints and step through your code.
+3.  **Writing Tests:** Spend 30 minutes learning the `pytest` module. Testing your code prevents future changes from breaking existing features and is a requirement in any professional team.
+4.  **Git Mastery:** Go beyond basic commits. Learn how to handle merge conflicts, check commit histories, and work with branches.
+5.  **The Terminal:** Get comfortable using the command line for basic navigation, running files, and executing shell scripts.
+
+## The Bottom Line
+
+Mastering Python is not a race to collect as many syntax tags as possible. It is about building a deep, functional understanding of how to solve real-world problems. **Go deep, specialize early, and build complete things.**
