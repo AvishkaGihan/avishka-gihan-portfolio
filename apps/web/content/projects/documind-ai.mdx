@@ -16,12 +16,12 @@ DocuMind AI is a secure, high-performance RAG (Retrieval-Augmented Generation) p
 
 ## Screenshots
 
-| Splash Screen | Login & Auth | Home & Library |
-| :---: | :---: | :---: |
+|                           Splash Screen                           |                          Login & Auth                           |                        Home & Library                        |
+| :---------------------------------------------------------------: | :-------------------------------------------------------------: | :----------------------------------------------------------: |
 | ![Splash Screen](/images/projects/documind-ai/splash_screen.jpeg) | ![Login Screen](/images/projects/documind-ai/login_screen.jpeg) | ![Library](/images/projects/documind-ai/library_screen.jpeg) |
 
-| Chat Interface | Document Citations | Settings |
-| :---: | :---: | :---: |
+|                     Chat Interface                     |                      Document Citations                       |                               Settings                                |
+| :----------------------------------------------------: | :-----------------------------------------------------------: | :-------------------------------------------------------------------: |
 | ![Chat](/images/projects/documind-ai/chat_screen.jpeg) | ![Citations](/images/projects/documind-ai/citation_view.jpeg) | ![Settings Screen](/images/projects/documind-ai/settings_screen.jpeg) |
 
 ## Features
@@ -35,18 +35,21 @@ DocuMind AI is a secure, high-performance RAG (Retrieval-Augmented Generation) p
 ## Tech Stack
 
 ### Frontend (Mobile)
+
 - **Framework**: Flutter 3.41 / Dart 3.x
 - **State Management**: Riverpod (`AsyncNotifier`) / Immutable State (`@freezed`)
 - **Networking**: Dio with secure request/response interceptors
 - **Storage**: `flutter_secure_storage` for session caching
 
 ### Backend (API)
+
 - **Framework**: Python / FastAPI
 - **ORM & Migrations**: SQLAlchemy 2.0 (asyncpg) with Alembic
 - **Validation**: Pydantic v2
 - **Database**: SQLite (Development) / PostgreSQL 16 (Production)
 
 ### AI / ML Infrastructure
+
 - **Orchestration**: LangChain for managing structured RAG pipelines
 - **Embeddings**: `sentence-transformers` running locally
 - **Vector Store**: ChromaDB with segregated tenant collections

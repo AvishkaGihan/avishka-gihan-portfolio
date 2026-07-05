@@ -8,7 +8,8 @@ const metadata: Metadata = {
   },
   site: {
     title: "Avishka Gihan",
-    description: "Portfolio of Avishka Gihan — Software engineer specializing in full-stack web & mobile development and AI-powered applications.",
+    description:
+      "Portfolio of Avishka Gihan — Software engineer specializing in full-stack web & mobile development and AI-powered applications.",
     url: "https://avishkagihan.me",
     keywords: [
       "software engineer",

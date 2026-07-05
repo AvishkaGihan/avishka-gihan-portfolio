@@ -1,0 +1,95 @@
+---
+title: "The Rise of Vibe Research: Meet Lemma, the Autonomous AI Research Platform"
+description: "Vibe coding has taken the software world by storm. Now, autonomous multi-agent research platforms like Lemma are bringing the same hands-off, iterative magic to scientific experimentation, machine learning, and academic publishing."
+date: 2026-07-05
+author: Avishka Gihan
+---
+
+# The Rise of Vibe Research: Meet Lemma, the Autonomous AI Research Platform
+
+You have likely heard of **Vibe Coding**—the popular development style where you simply describe what you want in natural language, and AI agents build the codebase while you oversee the output. It is fast, intuitive, and abstracts away the syntax.
+
+But what happens when you apply this exact same paradigm to scientific exploration and academic research?
+
+Enter **Vibe Research**. Rather than coding or running experiments step-by-step, imagine describing a research question, choosing an experimental method, and letting a team of autonomous AI agents design the study, write the code, train the models, and publish a formatted, multi-page scientific paper with all of the findings.
+
+This is the promise of **Lemma**, an autonomous research platform developed by Analemma AI. Lemma changes the equation by shifting AI from a single-turn chatbot to a fully autonomous, multi-agent research coordinator.
+
+---
+
+## Beyond Single-Turn AI: How Lemma Works
+
+Most AI tools function on a single-turn loop: you write a prompt, and the model generates a response. If you ask a complex research question, it might search the web or cite a few sources, but it is ultimately guessing the answer in one go.
+
+Lemma operates differently. It is an orchestrator that spins up a virtual, cooperative team of AI agents that work together asynchronously:
+
+1. **Planning & Literature Review:** The system designs a research plan and performs extensive search and synthesis of existing papers to ground the study.
+2. **Code Generation & Execution:** The agents write the required code and run it in a sandboxed, remote virtual environment (complete with VS Code editor and terminal integration).
+3. **Experimentation & Validation:** The models train on real datasets, plot training curves, run multiple iterations, and validate outputs.
+4. **Document Generation:** The platform compiles the data, constructs graphs, writes a LaTeX-style paper, and lists references automatically.
+
+Interestingly, Lemma is an "AI for AI" product—it was partially built and optimized using its own autonomous research output, creating a self-improving loop.
+
+---
+
+## The Four Operating Modes of Lemma
+
+Depending on the depth of the task, Lemma provides four distinct modes:
+
+- **Explore:** Generates a basic, high-level research report in 1 to 3 minutes.
+- **Survey:** Builds long-form academic surveys with broad citation coverage of the existing literature.
+- **Code:** A practical experimentation environment where agents write and run scripts to execute a specific task, such as training a neural network.
+- **FARS (Fully Automated Research System):** The flagship system that runs multi-day, complex scientific pipelines to produce a publication-ready, nine-page academic research paper.
+
+---
+
+## Case Study 1: Building an AI-Image Classifier (Code Mode)
+
+To test Lemma's coding and execution capacity in a practical setting, we can look at a task designed to build a classifier that distinguishes AI-generated images from real photos.
+
+Instead of just writing code, Lemma's agents started by researching methodology. Once a plan was in place, the system initialized a remote workspace, downloaded a balanced dataset of 300 images (150 real, 150 AI-generated), and fine-tuned a **MobileNet V3 Small** model.
+
+```python
+# A look at the type of code structure Lemma generates autonomously
+import torch
+import torchvision.models as models
+
+def fine_tune_classifier():
+    # Loading the light-weight MobileNet V3 Small architecture
+    model = models.mobilenet_v3_small(weights='DEFAULT')
+    model.classifier[3] = torch.nn.Linear(model.classifier[3].in_features, 2)
+    return model
+```
+
+During the training run, the system automatically monitored epochs, plotted loss and accuracy curves, and tested the final classifier inside a virtual VS Code terminal. The model successfully classified test images with clear visualization grids showing the real vs. AI-generated tags.
+
+---
+
+## Case Study 2: Mitigating LLM Hallucinations via Uncertainty Prompting (FARS Mode)
+
+Using the advanced **FARS** mode, we can explore an experiment that investigated whether forcing Large Language Models (LLMs) to state their uncertainty (e.g., admitting _"I am not sure"_) reduces overall hallucinations.
+
+FARS drafted a research proposal, which was then converted into a 10-step experiment. The agents spun up instances of **Qwen 2.5 72B** and **GPT-4o** to test three prompting styles:
+
+1. **Baseline Prompting** (standard answering).
+2. **Loose Uncertainty** (allowing the model to express doubt).
+3. **Strict Binary Abstention** (forcing the model to either answer with absolute confidence or refuse to answer).
+
+### The Findings
+
+The experiment ran autonomously over several days, making api calls, compiling scores, and plotting the hallucination coverage efficiency (HCE).
+
+The final paper came to a fascinating conclusion:
+
+- **Binary Abstention Prompting** successfully reduced the false answer rate by **18% to 51%** across both models.
+- However, it introduced a trade-off called **over-abstention**, where the model refused to answer knowledge-intensive, long-tail questions that it actually knew the answer to.
+
+The system compiled these insights into a professional 9-page research paper complete with abstracts, related work sections, performance tables, and structured citations.
+
+---
+
+## Democratizing Scientific Exploration
+
+Lemma represents a massive shift in how we approach technical exploration. It democratizes research by giving individuals access to the same tools and systematic workflows that were previously restricted to large corporate R&D teams or universities.
+
+While AI-run research is still in its infancy and findings must be carefully vetted, the concept of **Vibe Research** shows a clear future: a world where AI agents research and write the code that eventually trains the next generation of AI.

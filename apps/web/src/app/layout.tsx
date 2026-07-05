@@ -38,7 +38,10 @@ export default function RootLayout({
           <Script src="https://unpkg.com/react-scan/dist/auto.global.js" />
         ) : null}
       </head>
-      <body className={`${bricolage_grotesque.className} antialiased`} suppressHydrationWarning>
+      <body
+        className={`${bricolage_grotesque.className} antialiased`}
+        suppressHydrationWarning
+      >
         <Providers>
           <Loader />
           {children}

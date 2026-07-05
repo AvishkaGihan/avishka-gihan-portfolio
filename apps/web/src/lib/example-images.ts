@@ -10,4 +10,3 @@ export const exampleImages = [
   "/images/projects/voicemock/setup.png",
   "/images/projects/xora-saas-landing/landing-page.png",
 ];
-
