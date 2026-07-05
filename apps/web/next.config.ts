@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
     serverActions: {
-      allowedOrigins: ["localhost:3000"],
+      allowedOrigins: ["localhost:3000", "avishkagihan.me"],
     },
     reactCompiler: true,
   },
