@@ -35,7 +35,7 @@ export async function generateMetadata(props: {
       type: "article",
       // todo: add custom dynamic og image
       authors: meta.author.name,
-      modifiedTime: page.data.date.toISOString(),
+      modifiedTime: new Date(page.data.date).toISOString(),
     },
   }) satisfies Metadata;
 }
